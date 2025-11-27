@@ -399,3 +399,36 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+## Build (Compilação) - O mais importante!
+# Estas pastas são geradas automaticamente ao compilar. Não devem ir para o Git.
+[Bb]in/
+[Oo]bj/
+debug/
+release/
+
+## NuGet Packages
+# O Visual Studio baixa os pacotes automaticamente, não precisamos subir a pasta.
+*.nupkg
+packages/
+!packages/build/
+
+## Arquivos temporários do Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+## Logs e Arquivos de Erro
+*.log
+*.txt
+
+## Arquivos de Configuração com Senhas (Opcional, mas recomendado)
+# Se você tiver um arquivo com a senha do banco, é bom ignorar para não vazar.
+# appsettings.Development.json
+# conexao.config
+
+## Outros arquivos temporários
+*.tmp
+*.bak
+*.swp
