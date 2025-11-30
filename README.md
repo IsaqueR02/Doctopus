@@ -26,13 +26,11 @@ O diferencial do sistema é o foco na **atenção interdisciplinar**, permitindo
 
 | Dashboard Principal | Histórico e Gráficos |
 |:-------------------:|:--------------------:|
-| ![Dashboard](screenshots/dashboard.png) | ![Graficos](screenshots/graficos.png) |
+| <img width="972" height="654" alt="Captura de tela 2025-11-30 140632" src="https://github.com/user-attachments/assets/fb2147b9-54c4-40c0-b0a8-de5ef696245b" /> | <img width="858" height="642" alt="Captura de tela 2025-11-30 140701" src="https://github.com/user-attachments/assets/de95d72b-2b74-4561-8393-794b6e810e7a" /> |
 
 | Cadastro de Paciente | Registro de Evolução |
 |:--------------------:|:--------------------:|
-| ![Cadastro](screenshots/cadastro.png) | ![Evolucao](screenshots/evolucao.png) |
-
-*(Substitua os caminhos acima pelas imagens reais do seu projeto)*
+| <img width="455" height="594" alt="Captura de tela 2025-11-30 140645" src="https://github.com/user-attachments/assets/e2a671a8-0b87-4ddd-83e5-0a1737027b97" /> | <img width="856" height="620" alt="Captura de tela 2025-11-30 141220" src="https://github.com/user-attachments/assets/58ba6235-d825-493b-9c31-84bebd630227" /> |
 
 ---
 
