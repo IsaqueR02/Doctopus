@@ -1,0 +1,99 @@
+﻿<Window x:Class="Doctopus.Aplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:local="clr-namespace:Doctopus.Aplication"
+        mc:Ignorable="d"
+        Title="Doctopus - Gestão Interdisciplinar" Height="700" Width="1000"
+        WindowStartupLocation="CenterScreen" Background="#F0F2F5">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone Mode="PrimaryMid" Padding="16" >
+            <DockPanel>
+                <materialDesign:PackIcon Kind="Jellyfish" Height="30" Width="30" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock Text="Doctopus" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                <Button Click="BtnEquipe_Click" Style="{StaticResource MaterialDesignFlatMidBgButton}" Margin="0,0,10,0" ToolTip="Gerenciar Equipe">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Doctor" Margin="0,0,5,0"/>
+                        <TextBlock Text="EQUIPE"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignToolForegroundButton}" HorizontalAlignment="Right" DockPanel.Dock="Right">
+                    <materialDesign:PackIcon Kind="Logout" />
+                </Button>
+            </DockPanel>
+        </materialDesign:ColorZone>
+        
+
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="txtBusca" TextChanged="TxtBusca_TextChanged" 
+                         materialDesign:HintAssist.Hint="Buscar paciente por nome..."
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+                         VerticalAlignment="Center" Margin="0,0,20,0"/>
+
+                <Button Grid.Column="1" Click="BtnNovoPaciente_Click"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        ToolTip="Cadastrar nova criança">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="AccountPlus" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="NOVO PACIENTE"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+
+            <materialDesign:Card Grid.Row="1" VerticalAlignment="Stretch">
+                <DataGrid x:Name="GridPacientes" 
+                          AutoGenerateColumns="False" 
+                          IsReadOnly="True"
+                          SelectionMode="Single"
+                          HeadersVisibility="All"
+                          CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="50"/>
+                        <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="2" FontWeight="Bold"/>
+
+                        <DataGridTextColumn Header="Diagnótico" Binding="{Binding Diagnostico}" Width="*"/>
+                        <DataGridTextColumn Header="Convênio" Binding="{Binding PlanoSaude}" Width="*"/>
+                        <DataGridTextColumn Header="Responsável" Binding="{Binding NomeResponsavel}" Width="*"/>
+
+                        <DataGridTemplateColumn Header="Ações" Width="220">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource MaterialDesignOutlinedButton}" 
+                        Content="ATENDER" 
+                        Click="BtnAtender_Click" 
+                        Height="30" Padding="10,0" Margin="0,0,10,0"
+                        ToolTip="Registrar nova sessão"/>
+
+                                        <Button Style="{StaticResource MaterialDesignFlatButton}" 
+                        Content="HISTÓRICO" 
+                        Click="BtnHistorico_Click"
+                        Height="30" Padding="10,0"
+                        ToolTip="Ver gráficos e evoluções"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </materialDesign:Card>
+        </Grid>
+    </Grid>
+</Window>
