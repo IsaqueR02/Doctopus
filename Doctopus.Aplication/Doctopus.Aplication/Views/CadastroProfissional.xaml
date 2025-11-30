@@ -1,0 +1,77 @@
+﻿<Window x:Class="Doctopus.Aplication.Views.CadastroProfissional"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Doctopus.Aplication.Views"
+        mc:Ignorable="d"
+        Title="Novo Profissional - Doctopus" Height="450" Width="400"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF448AFF"/>
+    </Window.Resources>
+    <Grid Margin="20">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <materialDesign:PackIcon Kind="Doctor" Width="30" Height="30" Foreground="{StaticResource PrimaryHueMidBrush}" VerticalAlignment="Center"/>
+                <TextBlock Text="Cadastro da Equipe" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <materialDesign:Card Padding="15" UniformCornerRadius="10">
+                <StackPanel>
+
+                    <TextBox x:Name="txtNomeProfissional" 
+                             materialDesign:HintAssist.Hint="Nome Completo do Profissional" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,15"/>
+
+                    <ComboBox x:Name="cbEspecialidade" 
+                              materialDesign:HintAssist.Hint="Especialidade / Cargo" 
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="0,0,0,15">
+                        <ComboBoxItem Content="Fonoaudiologia"/>
+                        <ComboBoxItem Content="Psicologia"/>
+                        <ComboBoxItem Content="Terapia Ocupacional"/>
+                        <ComboBoxItem Content="Psicopedagogia"/>
+                        <ComboBoxItem Content="Musicoterapia"/>
+                        <ComboBoxItem Content="Recepção/Admin"/>
+                    </ComboBox>
+
+                    <TextBox x:Name="txtRegistro" 
+                             materialDesign:HintAssist.Hint="Registro de Classe (Ex: CRP 06/1234)" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,15"/>
+
+                    <TextBlock Text="Cor na Agenda:" Margin="0,10,0,5" Foreground="Gray"/>
+                    <ComboBox x:Name="cbCor" materialDesign:HintAssist.Hint="Selecione uma cor">
+                        <ComboBoxItem Tag="#FF5252">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="#FF5252" Width="20" Height="20" CornerRadius="10" Margin="0,0,10,0"/>
+                                <TextBlock Text="Vermelho (Psico)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem Tag="#448AFF">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="#448AFF" Width="20" Height="20" CornerRadius="10" Margin="0,0,10,0"/>
+                                <TextBlock Text="Azul (Fono)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem Tag="#69F0AE">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="#69F0AE" Width="20" Height="20" CornerRadius="10" Margin="0,0,10,0"/>
+                                <TextBlock Text="Verde (T.O.)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                        <ComboBoxItem Tag="#FFD740">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="#FFD740" Width="20" Height="20" CornerRadius="10" Margin="0,0,10,0"/>
+                                <TextBlock Text="Amarelo (Pedago)"/>
+                            </StackPanel>
+                        </ComboBoxItem>
+                    </ComboBox>
+
+                </StackPanel>
+            </materialDesign:Card>
+            <Button Content="SALVAR PROFISSIONAL" Click="BtnSalvarProfissional_Click" 
+                    Margin="0,30,0,0" Height="50" Style="{StaticResource MaterialDesignRaisedButton}"/>
+        </StackPanel>
+    </Grid>
+</Window>
