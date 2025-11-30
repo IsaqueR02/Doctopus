@@ -3,7 +3,6 @@
 
 **Um projeto acadêmico, utilizando a linguagem C# e o banco de dados MySQL**
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 ![Badge .NET](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 ![Badge WPF](https://img.shields.io/badge/WPF-Windows-blue?style=for-the-badge)
 ![Badge MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
